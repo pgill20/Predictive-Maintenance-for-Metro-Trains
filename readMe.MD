@@ -68,10 +68,10 @@ For local development setup, please refer to the [setup.md](setup.md) file.
 
 ## Visualizations Explained
 
-### DV_pressure Control Chart
+### DV Pressure Control Chart
 Displays the pressure differential values over time with control limits. Spikes indicate potential pressure anomalies that may lead to system failures.
 
-### Oil_temperature Control Chart
+### Oil Temperature Control Chart
 Shows oil temperature measurements over time with statistical control limits. Temperature variations outside control limits may indicate system issues.
 
 ### Random Forest Predictive Probability Distribution
