@@ -1,0 +1,575 @@
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    height: 95vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Layout - Left and Right panels */
+.flex-left {
+    width: 250px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    position: relative;
+    z-index: 100; /* Ensure controls stay above other elements */
+    padding-bottom: 60px; /* Add space for About this Project at bottom */
+}
+
+.flex-right {
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* About this Project section - positioned at bottom */
+.about-project-bottom {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    width: 210px; /* Match the control-group width */
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border-left: 3px solid #1976d2;
+    z-index: 101; /* Above other elements */
+}
+
+.about-project-bottom h3 {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Dashboard title with question mark */
+.dashboard-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.dashboard-title {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.title-help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #e3f2fd; /* Match other question marks */
+    color: #1976d2;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: help;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    z-index: 99990 !important;
+}
+
+/* Help icon styles */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #e3f2fd; /* Light blue background */
+    color: #1976d2;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: help;
+    position: relative;
+    top: -2px; /* Move up slightly for better alignment */
+    z-index: 99990 !important; /* Ensure help icons stay above other elements */
+    vertical-align: middle !important;
+}
+
+/* Control help icon specific positioning */
+.control-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.control-help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #e3f2fd; /* Light blue background */
+    color: #1976d2;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: help;
+    position: relative;
+    top: -2px; /* Move up slightly for better alignment */
+    z-index: 99990 !important; /* Very high z-index */
+    vertical-align: middle !important;
+}
+
+/* Chart title help icon */
+.chart-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 50;
+}
+
+.chart-help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #e3f2fd;
+    color: #1976d2;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: help;
+    position: relative;
+    top: -3px !important; /* Move up slightly for better alignment */
+    z-index: 99990 !important;
+    vertical-align: middle !important;
+}
+
+/* Binary indicator help icon specific adjustments */
+.binary-indicator .help-icon {
+    position: relative;
+    z-index: 99990 !important;
+    vertical-align: middle !important;
+}
+
+/* Dynamic tooltip styles */
+#dynamic-tooltip {
+    white-space: pre-line; /* This preserves line breaks in the tooltip text */
+    text-align: left;
+    line-height: 1.5;
+    max-width: 250px;
+    position: fixed;
+    background-color: rgba(25, 118, 210, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    pointer-events: none;
+}
+
+/* Failure Indicator */
+.failure-indicator-container {
+    margin: 20px 0;
+    padding: 0;
+}
+
+.failure-indicator {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.status-normal {
+    background-color: rgba(52, 168, 83, 0.1);
+    color: #34A853;
+    border: 1px solid #34A853;
+}
+
+.status-failure {
+    background-color: rgba(234, 67, 53, 0.1);
+    color: #EA4335;
+    border: 1px solid #EA4335;
+}
+
+/* Binary Data Display Styles */
+.binary-data-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 15px;
+    position: relative;
+    z-index: 50;
+}
+
+.binary-indicator {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-left: 5px solid #ccc; /* Default border color */
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.indicator-title {
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indicator-value {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.status-on {
+    color: #34A853;
+    background-color: rgba(52, 168, 83, 0.1);
+    border-radius: 4px;
+}
+
+.status-off {
+    color: #EA4335;
+    background-color: rgba(234, 67, 53, 0.1);
+    border-radius: 4px;
+}
+
+.status-medium {
+    color: #FBBC05;
+    background-color: rgba(251, 188, 5, 0.1);
+    border-radius: 4px;
+}
+
+.status-high {
+    color: #EA4335;
+    background-color: rgba(234, 67, 53, 0.1);
+    border-radius: 4px;
+}
+
+/* Charts layout */
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.chart-wrapper {
+    background-color: white;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+}
+
+.chart-wrapper h3 {
+    margin-bottom: 6px;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+.chart-note {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.chart {
+    flex: 1;
+    min-height: 250px;
+    position: relative;
+    z-index: 5;
+}
+
+/* Controls styling */
+.control-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 200;
+}
+
+.control-group h3 {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #555;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+    font-size: 13px;
+}
+
+select, input, button {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Loading indicator */
+#loading-indicator {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* D3 Chart styling */
+.line {
+    fill: none;
+    stroke-width: 2px;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+/* Hide grid lines for DV pressure and Oil Temperature graphs */
+#chart-dv-pressure .grid line,
+#chart-oil-temperature .grid line {
+    display: none;
+}
+
+#chart-dv-pressure .grid path,
+#chart-oil-temperature .grid path {
+    display: none;
+}
+
+/* Chart tooltips */
+.tooltip {
+    position: absolute;
+    padding: 10px 12px;
+    background: rgba(40, 40, 40, 0.9);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 12px;
+    z-index: 1000;
+    max-width: 250px;
+    line-height: 1.5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.2s ease;
+}
+
+.permanent-tooltip {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: 1000;
+    line-height: 1.4;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.tooltip-line {
+    stroke: #999;
+    stroke-width: 1px;
+    stroke-dasharray: 3,3;
+}
+
+.tooltip-circle {
+    fill: #fff;
+    stroke-width: 2px;
+}
+
+/* Axis labels */
+.x-label, .y-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Note text style */
+.note {
+    font-style: italic;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Probability bar hover effect */
+.probability-bar {
+    transition: fill 0.2s ease, transform 0.2s ease, stroke 0.2s ease;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.probability-bar:hover {
+    stroke: #333;
+    stroke-width: 1px;
+}
+
+/* Chart legends */
+.legend text {
+    fill: #333;
+    font-size: 12px;
+}
+
+/* Make sure all interactive elements have appropriate cursors */
+.overlay, 
+.data-points circle,
+.bar {
+    cursor: pointer;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .flex-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+    }
+    
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart {
+        min-height: 300px;
+    }
+    
+    .binary-data-container {
+        flex-direction: column;
+    }
+    
+    .about-project-bottom {
+        position: static;
+        margin-top: 20px;
+        width: auto;
+    }
+    
+    #dynamic-tooltip {
+        max-width: 80vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .charts-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    .chart-wrapper:nth-child(3) {
+        grid-column: span 2;
+    }
+}
