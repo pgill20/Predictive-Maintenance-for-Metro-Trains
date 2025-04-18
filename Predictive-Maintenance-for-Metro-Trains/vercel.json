@@ -1,0 +1,19 @@
+{
+    "builds": [
+        {
+            "src": "app/app.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "(.*)",
+            "dest": "app/app.py"
+        },
+        {
+            "src": "app/(.*)",
+            "headers": {"Access-Control-Allow-Origin": "*"},
+            "continue": true
+        }
+    ]
+}
