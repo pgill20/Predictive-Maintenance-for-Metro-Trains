@@ -14,7 +14,7 @@
 
 ## Overview
 
-An interactive web application for visualizing time series data from metro train sensors, designed to display DV_pressure, Oil_temperature values over time and provide predictive maintenance analytics. The dashboard helps maintenance teams take proactive actions by predicting potential failures before they occur.
+An interactive web application for visualizing time series data from metro train sensors, designed to display DV Pressure, Oil Temperature values over time and provide predictive maintenance analytics. The dashboard helps maintenance teams take proactive actions by predicting potential failures before they occur.
 
 ## Features
 
@@ -73,10 +73,10 @@ For local development setup, please refer to the [setup.md](setup.md) file.
 
 ## Visualizations Explained
 
-### DV_pressure Control Chart
+### DV Pressure Control Chart
 Displays the pressure differential values over time with control limits. Spikes indicate potential pressure anomalies that may lead to system failures.
 
-### Oil_temperature Control Chart
+### Oil Temperature Control Chart
 Shows oil temperature measurements over time with statistical control limits. Temperature variations outside control limits may indicate system issues.
 
 ### Random Forest Predictive Probability Distribution
