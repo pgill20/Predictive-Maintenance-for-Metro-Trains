@@ -14,7 +14,7 @@
 
 ## Overview
 
-An interactive web application for visualizing time series data from metro train sensors, designed to display DV Pressure, Oil Temperature values over time and provide predictive maintenance analytics. The dashboard helps maintenance teams take proactive actions by predicting potential failures before they occur.
+An interactive web application for visualizing time series data from metro train sensors, designed to display DV Pressure, Oil Temperature and values over time and provide predictive maintenance analytics. The dashboard helps maintenance teams take proactive actions by predicting potential failures before they occur.
 
 ## Features
 
